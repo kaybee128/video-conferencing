@@ -11,19 +11,19 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 
-// authentication server js
-require('dotenv').config();
+// // authentication server js
+// require('dotenv').config();
 
-const { auth } = require('express-openid-connect');
-app.use(
-  auth({
-    issuerBaseURL: process.env.ISSUER_BASE_URL,
-    baseURL: process.env.BASE_URL,
-    clientID: process.env.CLIENT_ID,
-    secret: process.env.SECRET,
-    idpLogout: true,
-  })
-);
+// const { auth } = require('express-openid-connect');
+// app.use(
+//   auth({
+//     issuerBaseURL: process.env.ISSUER_BASE_URL,
+//     baseURL: process.env.BASE_URL,
+//     clientID: process.env.CLIENT_ID,
+//     secret: process.env.SECRET,
+//     idpLogout: true,
+//   })
+// );
 
 app.use(express.static(path.join(__dirname, 'public')));
 // // req.isAuthenticated is provided from the auth router
